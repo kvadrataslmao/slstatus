@@ -65,11 +65,13 @@ static const struct arg args[] = {
 	/* function format          argument */
 	{ run_command,	"🧅 %s|",	"systemctl status tor >/dev/null && echo ✔ || echo ❎"	},
 	{ run_command,	" %s|",	"du -a ~/.local/share/mail/*/INBOX/new/* 2>/dev/null | wc -l"	},
-	{ temp,		" %s°|",	"/sys/class/thermal/thermal_zone2/temp"	},
+	{ temp,		" %s°|",	"/sys/class/thermal/thermal_zone0/temp"	},
+	{ wifi_perc,	" %s%%|", 	"wlp4s0"	},
 	{ disk_free, 	"💽 %s|",	"/"		},
 	{ ram_perc, 	" %s%%|",	NULL		},
+	{ battery_state, "%s",		"BAT0"		},
+	{ battery_perc, " %s%%|",	"BAT0"		},
 	{ run_command,	"%s",		"pulsemixer --get-mute | sed -e 's/0/🔊/;s/1/🔇/'"	},
 	{ run_command,	" %s%%|",	"pulsemixer --get-volume | awk '{print $1}'"	},
-	{ uptime,	"up: %s|",		NULL	},
 	{ datetime, 	"%s",           "%b %d %a %H:%M:%S" }
 };
